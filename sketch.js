@@ -19,7 +19,7 @@ function setup() {
 	
 	groundObject=new ground(width/2,670,width,20);
 	dustbinObj=new dustbin(1200,650);
-	bola=new bolaa (100,100,40,40);
+	bola=new bolaa (200,450,40,40);
 	Engine.run(engine);
   
 }
@@ -35,4 +35,9 @@ function draw() {
   bola.display();
 
 }
-
+function keyPressed() 
+{ 
+	if (keyCode === UP_ARROW) {
+		Matter.Body.applyForce(bola.body,bola.body.position,{x:130,y:-145}); 
+	} 
+}
